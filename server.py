@@ -45,7 +45,11 @@ class TCPServer:
 
     def main(self):
         self.socket.listen(MAX_CLIENTS)
-        print(f"({time.strftime('%H:%M:%S')}) Server started on {HOST}:{PORT}")
+        print(f"({time.strftime('%H:%M:%S')}) Server started on {HOST.replace(
+            '0.0.0.0', 
+            socket.gethostbyname(
+                socket.gethostname()
+            ))}:{PORT}")
 
         for plugin in self.plugins:
             plugin.server_started()
