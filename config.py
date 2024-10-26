@@ -1,0 +1,5 @@
+HOST = "0.0.0.0"
+PORT = 6070
+MAX_CLIENTS = 5
+PLUGIN_DIR = "plugins"
+LOADING_PLUGINS = True
